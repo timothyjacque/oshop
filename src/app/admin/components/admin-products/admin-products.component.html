@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Product Management</h3>
+    </div>
+    <div class="col">
+      <a routerLink="/admin/products/new" class="btn btn-primary float-right">New Product</a>
+    </div>
+  </div>
+
+  <div class="table-container mat-elevation-z3">
+    <div class="table-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search...">
+      </mat-form-field>
+    </div>
+
+    <mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- Title Column -->
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+        <mat-cell *matCellDef="let product">{{ product.title }}</mat-cell>
+      </ng-container>
+  
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+        <mat-cell *matCellDef="let product"> {{ product.price | currency }} </mat-cell>
+      </ng-container>
+  
+      <!-- Edit Column -->
+      <ng-container matColumnDef="edit" >
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let product"><a [routerLink]="['/admin/products/', product.$key]">Edit</a></mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator 
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 25, 50, 100]">
+    </mat-paginator>
+  </div>
+
+</div>
+

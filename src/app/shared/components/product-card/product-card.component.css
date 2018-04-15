@@ -1,0 +1,12 @@
+
+.mat-card {
+    margin-bottom: 30px;
+}
+
+.mat-card button {
+    cursor: pointer;
+}
+
+.mat-card-title {
+    font-size: medium;
+}

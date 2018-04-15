@@ -1,0 +1,47 @@
+#showcase {
+  margin-top: -30px;
+}
+
+.carousel-item {
+  height: 500px; 
+}
+
+.carousel-image-1 {
+  background: url('../../../../assets/img/pizza.jpg');
+  background-size: cover; 
+}
+
+.carousel-image-2 {
+  background: url('../../../../assets/img/salad.jpg');
+  background-size: cover; 
+}
+
+.carousel-image-3 {
+  background: url('../../../../assets/img/wings.jpg');
+  background-size: cover; 
+}
+
+.dark-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+}
+
+#skills-header {
+  position: relative;
+  min-height: 200px;
+  background: url('../../../../assets/img/dinner.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: #fff; 
+  background-position: 0px -300px;
+}
+  
+.fa {
+  font-size: 50px; 
+}

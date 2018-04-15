@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>Customer Orders</h3>
+    </div>
+    <div class="col">
+      <a routerLink="/products" class="btn btn-primary float-right">New Order</a>
+    </div>
+  </div>
+
+  <div class="table-container mat-elevation-z3">
+    <div class="table-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search...">
+      </mat-form-field>
+    </div>
+    
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!-- Title Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let order">{{ order.shipping.name }}</mat-cell>
+      </ng-container>
+  
+      <!-- Price Column -->
+      <ng-container matColumnDef="date">
+        <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{ order.datePlaced | date }} </mat-cell>
+      </ng-container>
+  
+      <!-- Edit Column -->
+      <ng-container matColumnDef="orderNumber" >
+        <mat-header-cell *matHeaderCellDef>Order No.</mat-header-cell>
+        <mat-cell *matCellDef="let order"> {{ order.$key }}</mat-cell>
+      </ng-container>
+  
+      <!-- Edit Column -->
+      <ng-container matColumnDef="view" >
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let order"><a [routerLink]="['/admin/orders/', order.$key]">View</a></mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;">
+      </mat-row>
+    </mat-table>
+  
+    <mat-paginator 
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 25, 50, 100]">
+    </mat-paginator>
+  </div>
+
+</div>

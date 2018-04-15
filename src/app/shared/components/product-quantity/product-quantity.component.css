@@ -1,0 +1,22 @@
+.btn {
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #ccc;
+    border-color: #ccc;
+}
+
+.btn:hover {
+    background-color: rgb(142, 142, 142);
+    border-color: rgb(142, 142, 142);
+}
+
+.fa {
+    color: white;
+    font-size: small;
+}
+
+.font-small {
+    font-size: small;
+}
+
