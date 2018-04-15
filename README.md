@@ -1,4 +1,7 @@
-# CbAngular
+# Online Organic eCommerce Website
+
+Online organic eCommerce website using Angular and Bootstrap. Includes sliding carousel,
+font awesome, bootstrap tabs, dark overlay of images, angular material cards, angular material tables, sorting tables, filtering items, adding items to shopping cart, real-time updates across pages, order management, product management, forms for adding new products, auth guards for admins and users, order summaries, shipping information collection, and more.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
